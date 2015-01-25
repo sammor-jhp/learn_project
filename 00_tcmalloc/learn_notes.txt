@@ -1,0 +1,10 @@
+1. use google-perftools-1.8.3.tar.gz when make has err like below.
+uiltin-posix_memalign -fno-builtin-valloc -fno-builtin-pvalloc -Wno-unused-result -fno-exceptions -g -O2 -MT libtcmalloc_internal_la-system-alloc.lo -MD -MP -MF .deps/libtcmalloc_internal_la-system-alloc.Tpo -c src/system-alloc.cc  -fPIC -DPIC -o .libs/libtcmalloc_internal_la-system-alloc.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I. -I./src -I./src -pthread -DNDEBUG -Wall -Wwrite-strings -Woverloaded-virtual -Wno-sign-compare -fno-builtin-malloc -fno-builtin-free -fno-builtin-realloc -fno-builtin-calloc -fno-builtin-cfree -fno-builtin-memalign -fno-builtin-posix_memalign -fno-builtin-valloc -fno-builtin-pvalloc -Wno-unused-result -fno-exceptions -g -O2 -MT libtcmalloc_internal_la-memfs_malloc.lo -MD -MP -MF .deps/libtcmalloc_internal_la-memfs_malloc.Tpo -c src/memfs_malloc.cc  -fPIC -DPIC -o .libs/libtcmalloc_internal_la-memfs_malloc.o
+src/base/linuxthreads.cc: In function ‘void ListerThread(ListerParams*)’:
+src/base/linuxthreads.cc:312:22: error: invalid conversion from ‘void (*)(int, siginfo_t*, void*)’ to ‘void (*)(int, siginfo*, void*)’ [-fpermissive]
+     sa.sa_sigaction_ = SignalHandler;
+                      ^
+make: *** [libtcmalloc_la-linuxthreads.lo] Error 1
+
+2. change 2.0v also make fail
